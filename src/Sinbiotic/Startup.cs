@@ -38,7 +38,8 @@ namespace Sinbiotic
                 {
                     routes.MapRoute(
                         name: "default",
-                        template: "{controller=Home}/{action=Index}/{id?}");
+                        template: "{*permalink}",
+                        defaults: new { controller = "Home", action = "Index" });
                 });
         }
          // Entry point for the application.
