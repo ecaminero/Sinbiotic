@@ -1,0 +1,23 @@
+{
+  "name": "simbiotic",
+  "version": "1.0.0",
+  "description": "We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.1.0",
+    "stream-series": "^0.1.1",
+    "wiredep": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/quiwisinc/sinbiotic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/quiwisinc/sinbiotic#readme"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "sinbiotic",
+  "authors": [
+    "ecaminero <caminero.edwin@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "wwwroot/app/libraries/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.3.1"
+  }
+}
