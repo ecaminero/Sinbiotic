@@ -25,7 +25,7 @@ const paths = {
     ngController: webroot + "app/**/*.controller.js",
     script: webroot + "assets/scripts/**/*.js",
     style: webroot + "assets/styles/**/*.css",
-    minDist: webroot + "dist/.js"
+    minDist: webroot + "dist/*.min.js"
 };
 
 const moduleSrc = gulp.src(paths.ngModule, { read: false });
@@ -37,6 +37,10 @@ const styleSrc = gulp.src(paths.style, { read: false });
 function handleError(result){
   console.log("Error Complile", result);
 };
+
+gulp.task('watch', [], function() {
+  gulp.watch([moduleSrc, routeSrc, ngController], ['compile-js']);
+});
 
 
 gulp.task('empty-dist', function() {
@@ -74,14 +78,14 @@ gulp.task('compile-js-prod', ['empty-dist'], function() {
      .pipe(gulp.dest(webroot + 'dist'))
      .pipe(uglify({mangle: false}))
      .pipe(rename('main.min.js'))
-     .pipe(gulp.dest(webroot + 'dist/'))
+     .pipe(gulp.dest(webroot + 'dist'))
 });
 
 gulp.task('build:prod', ['compile-js-prod'], function () {
-    const minDist = gulp.src(paths.minDist, { read: false });
+    const minDist = gulp.src(paths.minDist, { read: false }, {relative: true});
     const scriptSrc = gulp.src(paths.script, { read: false });
     const styleSrc = gulp.src(paths.style, { read: false });
-    
+    console.log(paths.script);
     gulp.src(webroot + 'app/index.html')
         .pipe(wiredep({
             optional: 'configuration',
