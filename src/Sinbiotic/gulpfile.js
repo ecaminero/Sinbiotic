@@ -16,7 +16,8 @@ const paths = {
     ngRoute: webroot + "app/**/*.route.js",
     ngController: webroot + "app/**/*.controller.js",
     script: webroot + "assets/scripts/**/*.js",
-    style: webroot + "assets/styles/**/*.css"
+    style: webroot + "assets/styles/**/*.css",
+    dist: webroot + "dist/**.js"
 };
 
 gulp.task('compress', function() {
@@ -33,11 +34,8 @@ gulp.task('compress', function() {
     
 });
 
-
 gulp.task('inject:index', function () {
-    const moduleSrc = gulp.src(paths.ngModule, { read: false });
-    const routeSrc = gulp.src(paths.ngRoute, { read: false });
-    const controllerSrc = gulp.src(paths.ngController, { read: false });
+    const minDist = gulp.src(paths.dist, { read: false });
     const scriptSrc = gulp.src(paths.script, { read: false });
     const styleSrc = gulp.src(paths.style, { read: false });
 
@@ -47,7 +45,7 @@ gulp.task('inject:index', function () {
             goes: 'here',
             ignorePath: '..'
         }))
-        .pipe(inject(series(scriptSrc, moduleSrc, routeSrc, controllerSrc), { ignorePath: '/wwwroot' }))
+        .pipe(inject(series(scriptSrc, minDist), { ignorePath: '/wwwroot' }))
         .pipe(inject(series(styleSrc), { ignorePath: '/wwwroot' }))
         .pipe(gulp.dest(webroot + 'app'));
 });
