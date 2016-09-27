@@ -6,7 +6,7 @@ namespace Sinbiotic.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("~/wwwroot/app/index.html");
         }
     }
 }
