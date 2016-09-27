@@ -238,3 +238,6 @@ _Pvt_Extensions
 
 # Bower
 src/Sinbiotic/wwwroot/libraries/
+
+# Dist
+src/Sinbiotic/wwwroot/dist/
