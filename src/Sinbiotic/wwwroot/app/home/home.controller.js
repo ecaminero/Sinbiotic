@@ -4,7 +4,8 @@
   angular
     .module('app.home')
     .controller('homeController', homeController);
-
+ 
+ /* @ngInject */
   function homeController($log) {
     var vm = this;
     vm.title = 'homeController';
@@ -14,5 +15,4 @@
       $log.info("homeController");
     }
   }
-    homeController.$inject = ['$log'];
 })();

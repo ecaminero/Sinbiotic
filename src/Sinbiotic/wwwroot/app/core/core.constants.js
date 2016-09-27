@@ -6,5 +6,4 @@
         .constant("BASE_API_URL", "http://localhost:50883")
         //.constant("moment", moment)
         .constant("_", window._);
-
 })();

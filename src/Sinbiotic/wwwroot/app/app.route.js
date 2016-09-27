@@ -5,7 +5,6 @@
       .module('app')
       .config(uiRouterConfig);
 
-  uiRouterConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
   /* @ngInject */
   function uiRouterConfig($stateProvider,  $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);

@@ -4,7 +4,8 @@
   angular
     .module('app.notification')
     .controller('notificationController', notificationController);
-
+ 
+ /* @ngInject */
   function notificationController($log) {
     var vm = this;
     vm.title = 'notificationController';
@@ -14,5 +15,4 @@
       $log.info("notificationController");
     }
   }
-  notificationController.$inject = ['$log'];
 })();
